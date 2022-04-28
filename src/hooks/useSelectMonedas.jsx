@@ -1,10 +1,17 @@
 import React from 'react'
+import styled from '@emotion/styled'
 
-const useSelectMonedas = () => {
+const Label = styled.label`
+    color: #FFF;
+`
+
+const useSelectMonedas = (label) => {
     
-    const SelectMonedas = () => {
-        console.log('desde custom hook')   
-    }
+    const SelectMonedas = () => (
+        <>
+            <Label>{label}</Label>
+        </>
+    )
     return [SelectMonedas]
 }
 

@@ -124,7 +124,7 @@
             animation-delay: -0.1s;
   }
   
-  @-webkit-keyframes sk-circleFadeDelay {
+@-webkit-keyframes sk-circleFadeDelay {
     0%, 39%, 100% { opacity: 0; }
     40% { opacity: 1; }
   }

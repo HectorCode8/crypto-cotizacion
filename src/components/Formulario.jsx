@@ -16,7 +16,6 @@ const InputSubmit = styled.input`
     border-radius: 5px;
     transition: background-color .3s ease;
     margin-top: 30px;
-
     &:hover {
         background-color: #7A7DFE;
         cursor: pointer;
@@ -26,7 +25,6 @@ const InputSubmit = styled.input`
 const Formulario = ({setMonedas}) => {
     const [cryptos, setCryptos] = useState([])
     const [error, setError] = useState(false)
-
     const [ moneda, SelectMonedas ] = useSelectMonedas('Elige tu Moneda', monedas)
     const [ cryptomoneda, SelectCryptomoneda ] = useSelectMonedas('Elige tu Cryptomoneda', cryptos)
 
@@ -35,7 +33,6 @@ const Formulario = ({setMonedas}) => {
             const url = `https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD`
             const resultado = await fetch(url)
             const resultadoJSON = await resultado.json()
-            
             const arrayCrypto = resultadoJSON.Data.map( crypto => {
                 const objeto = {
                     id: crypto.CoinInfo.Name,
@@ -52,7 +49,6 @@ const Formulario = ({setMonedas}) => {
         e.preventDefault()
         if([moneda, cryptomoneda].includes('')) {
             setError(true)
-
             return
         }
         setError(false)
@@ -60,15 +56,12 @@ const Formulario = ({setMonedas}) => {
             moneda, 
             cryptomoneda
         })
-
     }
-
     return (
         <>
             {error && <Error>Todos los campos son obligatorios</Error>}
             <form
-                onSubmit={handleSubmit}>
-                    
+                onSubmit={handleSubmit}>   
                 <SelectMonedas />
                 <SelectCryptomoneda />
                 <InputSubmit 

@@ -37,11 +37,11 @@ function Resultado({resultado}) {
     <Contenedor>
         <Image src={`https://cryptocompare.com/${IMAGEURL}`} alt="imagen-cripto" />
         <div>
-        <Precio>El Precio es de : <span>{PRICE}</span></Precio>
-        <Texto>Precio más alto del día: <span>{HIGHDAY}</span></Texto>
-        <Texto>Precio más bajo del día: <span>{LOWDAY}</span></Texto>
-        <Texto>Variación últimas 24 hrs: <span>{CHANGEPCT24HOUR}</span></Texto>
-        <Texto>Última Actualización: <span>{LASTUPDATE}</span></Texto>
+            <Precio>El Precio es de : <span>{PRICE}</span></Precio>
+            <Texto>Precio más alto del día: <span>{HIGHDAY}</span></Texto>
+            <Texto>Precio más bajo del día: <span>{LOWDAY}</span></Texto>
+            <Texto>Variación últimas 24 hrs: <span>{CHANGEPCT24HOUR}</span></Texto>
+            <Texto>Última Actualización: <span>{LASTUPDATE}</span></Texto>
         </div>
     </Contenedor>
   )

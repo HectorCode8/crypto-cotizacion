@@ -41,7 +41,6 @@ const Imagen = styled.img`
   margin: 100px auto 0 auto;
   display: block;
 `
-
 function App() {
   const [monedas, setMonedas ] = useState({})
   const [resultado, setResultado ] = useState({})
@@ -55,18 +54,12 @@ function App() {
           setResultado({})
           const {moneda, cryptomoneda} = monedas
             const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptomoneda}&tsyms=${moneda}`
-            
             const resultado = await fetch(url)
             const resultadoJSON = await resultado.json()
-
             setResultado(resultadoJSON.DISPLAY[cryptomoneda][moneda])
-
             setCargando(false)
-            
         }
-
         cotizarCrypto()
-
       }
   }, [monedas])
 
